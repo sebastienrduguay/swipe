@@ -28,7 +28,6 @@ export default class App extends React.Component {
             icon={{ name: 'code' }}
             backgroundColor='#03A9F4'
             title='View now!'
-
           />
         </Card>
       );
