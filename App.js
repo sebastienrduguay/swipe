@@ -18,7 +18,6 @@ export default class App extends React.Component {
   renderCard(item) {
       return (
         <Card
-          key={item.id}
           title={item.text}
           image={{ uri: item.uri }}
         >
@@ -29,10 +28,23 @@ export default class App extends React.Component {
             icon={{ name: 'code' }}
             backgroundColor='#03A9F4'
             title='View now!'
-          
+
           />
         </Card>
       );
+  }
+  renderNoMoreCards() {
+    return (
+      <Card title="all done">
+        <Text style={{ marginBottom: 10 }}>
+          No more Cards
+        </Text>
+        <Button
+          backgroundColor='#03A9F4'
+          title="Get More"
+        />
+      </Card>
+    );
   }
 
   render() {
@@ -41,6 +53,7 @@ export default class App extends React.Component {
         <Deck
           data={DATA}
           renderCard={this.renderCard}
+          renderNoMoreCards={this.renderNoMoreCards}
         />
       </View>
     );
